@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinet d'ORL Dr. Martin & Associés | Oto-Rhino-Laryngologie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon - Icône pour le site -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👂</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👂</text></svg>">
+    
+    <!-- Alternative avec une icône plus détaillée -->
+    <!-- 
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231a73e8'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E">
+    -->
+    
+    <style>
+        /* Variables CSS pour une gestion facile des couleurs */
+        :root {
+            --primary: #1a73e8;
+            --primary-dark: #0d47a1;
+            --secondary: #e8f4fc;
+            --accent: #ff9800;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --gray: #6c757d;
+            --success: #28a745;
+            --danger: #dc3545;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+        
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--primary-dark);
+        }
+        
+        ul {
+            list-style-position: inside;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        button, .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        button:hover, .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--primary-dark);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #d1e7fd;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background-color: #e68900;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-light {
+            background-color: white;
+        }
+        
+        .section-colored {
+            background-color: var(--secondary);
+        }
+        
+        /* Header et Navigation */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        
+        .logo-subtext {
+            font-size: 0.9rem;
+            color: var(--gray);
+            display: block;
+            font-weight: 400;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin: 0;
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--dark);
+            font-weight: 600;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a.active {
+            color: var(--primary);
+        }
+        
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 3px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 115, 232, 0.9), rgba(13, 71, 161, 0.9)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1153&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 0;
+        }
+        
+        .hero h1 {
+            color: white;
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-member {
+            text-align: center;
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid var(--secondary);
+        }
+        
+        /* Appointment Section */
+        .appointment-container {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            width: 40px;
+            flex-shrink: 0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo .logo-text {
+            color: white;
+        }
+        
+        .footer-links h3, .footer-contact h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-contact p {
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Pages cachées */
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .appointment-container {
+                padding: 20px;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-ear-listen logo-icon"></i>
+                    <div>
+                        <div class="logo-text">ORL Médical<span class="logo-subtext">Cabinet Dr. Martin & Associés</span></div>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#accueil" class="nav-link active" data-page="accueil">Accueil</a></li>
+                    <li><a href="#services" class="nav-link" data-page="services">Services</a></li>
+                    <li><a href="#equipe" class="nav-link" data-page="equipe">Équipe</a></li>
+                    <li><a href="#rendezvous" class="nav-link" data-page="rendezvous">Rendez-vous</a></li>
+                    <li><a href="#contact" class="nav-link" data-page="contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page d'Accueil -->
+    <section class="page active" id="accueil-page">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="container">
+                <h1>Cabinet d'Oto-Rhino-Laryngologie</h1>
+                <p>Spécialistes des troubles de l'oreille, du nez et de la gorge. Nous offrons des soins médicaux et chirurgicaux de haute qualité pour tous les âges.</p>
+                <div class="hero-btns">
+                    <button class="btn page-link" data-page="rendezvous">Prendre rendez-vous</button>
+                    <button class="btn btn-secondary page-link" data-page="contact">Nous contacter</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Présentation -->
+        <div class="section section-light">
+            <div class="container">
+                <h2>Nos Domaines d'Expertise</h2>
+                <p>Notre cabinet d'ORL offre une prise en charge complète pour tous les problèmes liés à l'oreille, au nez et à la gorge.</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-content">
+                            <i class="fas fa-ear-deaf service-icon"></i>
+                            <h3>Audiologie</h3>
+                            <p>Tests auditifs, appareillages, traitement des acouphènes et troubles de l'équilibre.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-content">
+                            <i class="fas fa-allergies service-icon"></i>
+                            <h3>Allergologie</h3>
+                            <p>Diagnostic et traitement des allergies respiratoires, rhinites allergiques et sinusites.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-content">
+                            <i class="fas fa-head-side-cough service-icon"></i>
+                            <h3>Voix & Déglutition</h3>
+                            <p>Prise en charge des troubles de la voix, de la déglutition et des pathologies laryngées.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <button class="btn btn-secondary page-link" data-page="services">Voir tous nos services</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Informations Pratiques -->
+        <div class="section section-colored">
+            <div class="container">
+                <h2>Informations Pratiques</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <div>
+                                <h3>Horaires d'ouverture</h3>
+                                <p>Lundi - Vendredi : 8h30 - 19h00</p>
+                                <p>Samedi : 9h00 - 12h00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <h3>Notre adresse</h3>
+                                <p>123 Avenue de la Santé<br>75015 Paris, France</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <div>
+                                <h3>Téléphone</h3>
+                                <p>01 23 45 67 89</p>
+                                <p>Urgences : 01 23 45 67 90</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p>contact@orlmedical.fr</p>
+                                <p>rendezvous@orlmedical.fr</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Services -->
+    <section class="page" id="services-page">
+        <div class="section section-light">
+            <div class="container">
+                <h2>Nos Services d'ORL</h2>
+                <p>Découvrez l'étendue de nos services spécialisés en oto-rhino-laryngologie.</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-content">
+                            <i class="fas fa-hearing service-icon"></i>
+                            <h3>Audiologie & Surdité</h3>
+                            <ul>
+                                <li>Tests audiométriques complets</li>
+                                <li>Appareillage auditif sur mesure</li>
+                                <li>Rééducation auditive</li>
+                                <li>Implants cochléaires</li>
+                                <li>Traitement des acouphènes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-content">
+                            <i class="fas fa-lungs service-icon"></i>
+                            <h3>Pathologies Nasales & Sinusiennes</h3>
+                            <ul>
+                                <li>Rhinoplastie fonctionnelle</li>
+                                <li>Chirurgie des sinus</li>
+                                <li>Déviation de la cloison nasale</li>
+                                <li>Polypes nasaux</li>
+                                <li>Epistaxis (saignements de nez)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-content">
+                            <i class="fas fa-throat service-icon"></i>
+                            <h3>Pathologies Laryngées</h3>
+                            <ul>
+                                <li>Laryngoscopie & vidéo-stroboscopie</li>
+                                <li>Troubles de la voix (dysphonie)</li>
+                                <li>Nodules et polypes des cordes vocales</li>
+                                <li>Cancers ORL</li>
+                                <li>Rééducation vocale</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-content">
+                            <i class="fas fa-child service-icon"></i>
+                            <h3>ORL Pédiatrique</h3>
+                            <ul>
+                                <li>Amygdalites et adénoïdites</li>
+                                <li>Otites séreuses et aiguës</li>
+                                <li>Sténoses des voies aériennes</li>
+                                <li>Malformations congénitales</li>
+                                <li>Corps étrangers ORL</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-content">
+                            <i class="fas fa-bed service-icon"></i>
+                            <h3>Chirurgie Ambulatoire</h3>
+                            <ul>
+                                <li>Amygdalectomie</li>
+                                <li>Adénoïdectomie</li>
+                                <li>Septoplastie</li>
+                                <li>Turbinoplastie</li>
+                                <li>Miringotomie (paracentèse)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-content">
+                            <i class="fas fa-dizzy service-icon"></i>
+                            <h3>Vertiges & Troubles de l'Équilibre</h3>
+                            <ul>
+                                <li>Videonystagmographie</li>
+                                <li>Maniœuvres thérapeutiques</li>
+                                <li>Neuronite vestibulaire</li>
+                                <li>Maladie de Ménière</li>
+                                <li>VPPB (Vertige Positionnel)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <button class="btn page-link" data-page="rendezvous">Prendre rendez-vous</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Équipe -->
+    <section class="page" id="equipe-page">
+        <div class="section section-light">
+            <div class="container">
+                <h2>Notre Équipe Médicale</h2>
+                <p>Une équipe de professionnels expérimentés dédiée à votre santé ORL.</p>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Dr. Sophie Martin" class="member-photo">
+                        <h3>Dr. Sophie Martin</h3>
+                        <p>ORL-Chirurgien Cervico-Facial</p>
+                        <p>Spécialisée en chirurgie oncologique ORL et reconstruction</p>
+                        <p>Expérience : 20 ans</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Dr. Thomas Lefèvre" class="member-photo">
+                        <h3>Dr. Thomas Lefèvre</h3>
+                        <p>ORL-Audiophonologiste</p>
+                        <p>Spécialisé en audiologie et implants cochléaires</p>
+                        <p>Expérience : 15 ans</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1594824434340-7e7dfc37cabb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Dr. Claire Dubois" class="member-photo">
+                        <h3>Dr. Claire Dubois</h3>
+                        <p>ORL Pédiatrique</p>
+                        <p>Spécialisée en pathologies ORL de l'enfant</p>
+                        <p>Expérience : 12 ans</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1167&q=80" alt="Dr. Michel Bernard" class="member-photo">
+                        <h3>Dr. Michel Bernard</h3>
+                        <p>ORL-Allergologue</p>
+                        <p>Spécialisé en allergologie respiratoire et rhinologie</p>
+                        <p>Expérience : 18 ans</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 50px;">
+                    <h3>Notre Personnel de Soutien</h3>
+                    <p>Notre équipe est également composée d'infirmières diplômées d'État, d'audioprothésistes, d'orthophonistes et d'un secrétariat médical dédié à votre accueil et à votre suivi.</p>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <button class="btn page-link" data-page="rendezvous">Prendre rendez-vous</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Rendez-vous -->
+    <section class="page" id="rendezvous-page">
+        <div class="section section-light">
+            <div class="container">
+                <h2>Prendre un Rendez-vous</h2>
+                <p>Réservez en ligne votre consultation avec l'un de nos spécialistes.</p>
+                
+                <div class="appointment-container">
+                    <form id="appointmentForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Prénom *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Nom *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Téléphone *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="doctor">Choisir un médecin *</label>
+                                <select id="doctor" name="doctor" required>
+                                    <option value="">Sélectionnez un médecin</option>
+                                    <option value="dr_martin">Dr. Sophie Martin (ORL-Chirurgien)</option>
+                                    <option value="dr_lefevre">Dr. Thomas Lefèvre (Audiologie)</option>
+                                    <option value="dr_dubois">Dr. Claire Dubois (ORL Pédiatrique)</option>
+                                    <option value="dr_bernard">Dr. Michel Bernard (Allergologie)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="date">Date souhaitée *</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reason">Motif de la consultation *</label>
+                            <select id="reason" name="reason" required>
+                                <option value="">Sélectionnez un motif</option>
+                                <option value="audition">Problème d'audition / acouphènes</option>
+                                <option value="nez">Problème nasal / sinusite</option>
+                                <option value="gorge">Mal de gorge / voix</option>
+                                <option value="vertiges">Vertiges / équilibre</option>
+                                <option value="allergie">Allergie respiratoire</option>
+                                <option value="controle">Consultation de contrôle</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message supplémentaire</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Décrivez brièvement vos symptômes ou vos attentes..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Demander un rendez-vous</button>
+                    </form>
+                    
+                    <div id="confirmationMessage" style="display: none; margin-top: 30px; padding: 20px; background-color: var(--secondary); border-radius: var(--border-radius);">
+                        <h3>Merci pour votre demande de rendez-vous !</h3>
+                        <p>Nous vous contacterons dans les 24 heures pour confirmer votre rendez-vous.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 50px;">
+                    <h3>Informations Importantes</h3>
+                    <ul>
+                        <li>Veuillez vous munir de votre carte vitale et de votre carte de mutuelle lors de votre consultation.</li>
+                        <li>Pour les premiers rendez-vous, merci d'arriver 15 minutes à l'avance.</li>
+                        <li>En cas d'urgence ORL en dehors des heures d'ouverture, contactez le 15 ou rendez-vous aux urgences les plus proches.</li>
+                        <li>Les rendez-vous annulés moins de 24 heures à l'avance pourront être facturés.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Contact -->
+    <section class="page" id="contact-page">
+        <div class="section section-light">
+            <div class="container">
+                <h2>Nous Contacter</h2>
+                <p>N'hésitez pas à nous contacter pour toute question ou prise de rendez-vous.</p>
+                
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <h3>Notre Adresse</h3>
+                                <p><strong>Cabinet d'ORL Dr. Martin & Associés</strong></p>
+                                <p>123 Avenue de la Santé</p>
+                                <p>75015 Paris, France</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <div>
+                                <h3>Téléphone</h3>
+                                <p><strong>Standard :</strong> 01 23 45 67 89</p>
+                                <p><strong>Urgences :</strong> 01 23 45 67 90</p>
+                                <p><strong>Fax :</strong> 01 23 45 67 91</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p><strong>Contact général :</strong> contact@orlmedical.fr</p>
+                                <p><strong>Rendez-vous :</strong> rendezvous@orlmedical.fr</p>
+                                <p><strong>Comptabilité :</strong> comptabilite@orlmedical.fr</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h3>Formulaire de Contact</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="contactName">Nom complet *</label>
+                                <input type="text" id="contactName" name="contactName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactEmail">Email *</label>
+                                <input type="email" id="contactEmail" name="contactEmail" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactSubject">Sujet *</label>
+                                <input type="text" id="contactSubject" name="contactSubject" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactMessage">Message *</label>
+                                <textarea id="contactMessage" name="contactMessage" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn">Envoyer le message</button>
+                        </form>
+                        
+                        <div id="contactConfirmation" style="display: none; margin-top: 20px; padding: 15px; background-color: var(--secondary); border-radius: var(--border-radius);">
+                            <p><strong>Message envoyé !</strong> Nous vous répondrons dans les plus brefs délais.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 50px;">
+                    <h3>Plan d'Accès</h3>
+                    <div style="background-color: var(--secondary); padding: 20px; border-radius: var(--border-radius);">
+                        <p><strong>En transports en commun :</strong></p>
+                        <ul>
+                            <li>Métro : Ligne 12 (Station Vaugirard) - Ligne 6 (Station Convention)</li>
+                            <li>Bus : Lignes 39, 80, 89 (Arrêt Santé)</li>
+                            <li>Tramway : T3 (Arrêt Porte de Versailles)</li>
+                        </ul>
+                        
+                        <p><strong>En voiture :</strong></p>
+                        <ul>
+                            <li>Parking public disponible au 125 Avenue de la Santé (tarifs préférentiels sur présentation du ticket de consultation)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <i class="fas fa-ear-listen logo-icon"></i>
+                        <div class="logo-text">ORL Médical</div>
+                    </div>
+                    <p>Cabinet spécialisé en Oto-Rhino-Laryngologie depuis 1995.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="#accueil" class="footer-link" data-page="accueil">Accueil</a></li>
+                        <li><a href="#services" class="footer-link" data-page="services">Services</a></li>
+                        <li><a href="#equipe" class="footer-link" data-page="equipe">Équipe</a></li>
+                        <li><a href="#rendezvous" class="footer-link" data-page="rendezvous">Rendez-vous</a></li>
+                        <li><a href="#contact" class="footer-link" data-page="contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Avenue de la Santé, 75015 Paris</p>
+                    <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
+                    <p><i class="fas fa-envelope"></i> contact@orlmedical.fr</p>
+                    <div style="margin-top: 15px;">
+                        <button class="btn btn-accent page-link" data-page="rendezvous" style="padding: 8px 16px; font-size: 0.9rem;">Prendre RDV</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Cabinet d'ORL Dr. Martin & Associés. Tous droits réservés. | Site conçu pour les besoins médicaux</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation entre les pages
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pageLinks = document.querySelectorAll('.page-link');
+            const footerLinks = document.querySelectorAll('.footer-link');
+            const pages = document.querySelectorAll('.page');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinksContainer = document.getElementById('navLinks');
+            
+            // Fonction pour changer de page
+            function changePage(pageId) {
+                // Retirer la classe active de tous les liens de navigation
+                navLinks.forEach(l => l.classList.remove('active'));
+                pageLinks.forEach(l => l.classList.remove('active'));
+                footerLinks.forEach(l => l.classList.remove('active'));
+                
+                // Ajouter la classe active au lien correspondant
+                const activeNavLink = document.querySelector(`.nav-link[data-page="${pageId}"]`);
+                if (activeNavLink) activeNavLink.classList.add('active');
+                
+                // Masquer toutes les pages
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Afficher la page correspondante
+                document.getElementById(`${pageId}-page`).classList.add('active');
+                
+                // Fermer le menu mobile si ouvert
+                if (navLinksContainer.classList.contains('active')) {
+                    navLinksContainer.classList.remove('active');
+                }
+                
+                // Faire défiler vers le haut de la page
+                window.scrollTo(0, 0);
+            }
+            
+            // Gestion de la navigation principale
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    changePage(pageId);
+                });
+            });
+            
+            // Gestion des boutons de navigation
+            pageLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    changePage(pageId);
+                });
+            });
+            
+            // Gestion des liens du footer
+            footerLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    changePage(pageId);
+                });
+            });
+            
+            // Gestion du menu mobile
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinksContainer.classList.toggle('active');
+            });
+            
+            // Gestion du formulaire de rendez-vous
+            const appointmentForm = document.getElementById('appointmentForm');
+            const confirmationMessage = document.getElementById('confirmationMessage');
+            
+            if (appointmentForm) {
+                appointmentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simulation de l'envoi du formulaire
+                    setTimeout(function() {
+                        appointmentForm.style.display = 'none';
+                        confirmationMessage.style.display = 'block';
+                    }, 500);
+                });
+            }
+            
+            // Gestion du formulaire de contact
+            const contactForm = document.getElementById('contactForm');
+            const contactConfirmation = document.getElementById('contactConfirmation');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simulation de l'envoi du formulaire
+                    setTimeout(function() {
+                        contactForm.reset();
+                        contactConfirmation.style.display = 'block';
+                        
+                        // Masquer le message de confirmation après 5 secondes
+                        setTimeout(function() {
+                            contactConfirmation.style.display = 'none';
+                        }, 5000);
+                    }, 500);
+                });
+            }
+            
+            // Définir la date minimale pour les rendez-vous (demain)
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(today.getDate() + 1);
+            
+            const dd = String(tomorrow.getDate()).padStart(2, '0');
+            const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+            const yyyy = tomorrow.getFullYear();
+            
+            const minDate = yyyy + '-' + mm + '-' + dd;
+            
+            const dateInput = document.getElementById('date');
+            if (dateInput) {
+                dateInput.min = minDate;
+            }
+            
+            // Gestion du logo comme lien vers l'accueil
+            const logo = document.querySelector('.logo');
+            if (logo) {
+                logo.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    changePage('accueil');
+                });
+                logo.style.cursor = 'pointer';
+            }
+        });
+    </script>
+</body>
+</html>
